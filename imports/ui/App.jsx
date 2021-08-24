@@ -1,11 +1,20 @@
 import React from 'react';
-import { Hello } from './Hello.jsx';
-import { Info } from './Info.jsx';
+import { Picking } from './Picking';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect
+} from "react-router-dom";
 
-export const App = () => (
-  <div>
-    <h1 className="text-red-500 text-2xl">Welcome to Meteor</h1>
-    <Hello/>
-    <Info/>
-  </div>
-);
+export const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Picking />
+        </Route>
+      </Switch>
+    </Router>
+  )
+};
